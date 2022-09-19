@@ -7,7 +7,11 @@ const Products = () => {
     const [products, setProducts] = useState([])
     const [category, setCategory] = useState([])
 
-
+    const loadProducts = () => {
+      const allProduct = category
+      console.log(allProduct);
+      setProducts(allProduct)
+    }
     useEffect(()=>{
       fetch('products.json')
       .then(res => res.json())
@@ -24,20 +28,26 @@ const Products = () => {
             setProducts(match)
       }
       else{
-                 setProducts(products)
+             loadProducts()
       }
     
     }
 
     const handleFilterClr = () =>{
-            setCategory([])
-            window.location.reload(true)
+           loadProducts()
             
             
     };
 
     const handleSearch = (e) => {
-      console.log(e.target.value);
+      console.log();
+      if(e.target.value){
+        const match = products.filter(p => p.name.includes(e.target.value));
+        setProducts(match)
+      }
+      else{
+       loadProducts()
+      }
     }
 
     return (
@@ -72,7 +82,7 @@ const Products = () => {
                 <p className='ml-12'>Name</p>  
                 </th>
 
-                <th className='ml- -100px'>color</th>
+                <th>color</th>
                 <th>Stock</th> 
                 <th>price</th>
                 <th>Buy</th>
