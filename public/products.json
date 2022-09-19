@@ -1,4 +1,4 @@
-[
+[  
     {
       "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead",
       "category": "Men's Sneaker",
@@ -44,7 +44,7 @@
       "name": "Superlite Hat",
       "price": 11,
       "color":"black",
-      "stock": "In stock",
+      "stock": "out of stock",
       "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0ae141db6fce44999337ac8e015954ea_9366/Superlite_Hat_Grey_EX7054_01_standard.jpg"
     },
    

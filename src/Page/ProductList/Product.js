@@ -17,14 +17,15 @@ const Product = ({product}) => {
                     </div>
                   </div>
               </td>
-                <td className='text-info'>{color}</td>
+                <td className='text-info font-bold'> <u>{color}</u> </td>
                 <th>
-                  <p>{stock}</p>
+                 { stock === 'In stock' ?  <p className='text-success'>{stock}</p> :  <p className='text-error'>{stock}</p>}
                 </th>
                 <th>{price}</th>
                 <th>
                   <label>
-                    <input type="checkbox" className="checkbox" />
+                    {stock === 'In stock' ? <input type="checkbox" className="checkbox" /> : <input type="checkbox" className="checkbox" disabled/>}
+                    
                   </label>
                 </th>
               </tr>
