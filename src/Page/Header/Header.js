@@ -13,8 +13,6 @@ const Header = () => {
            </div>
          </div>
          <div className="navbar-end">
-         
-          <button className='font-bold mr-12'> <Link to="/checkout">Checkout</Link> </button>
           <p className='font-bold mr-4'>About</p>
            <button className="btn btn-ghost btn-circle">
              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

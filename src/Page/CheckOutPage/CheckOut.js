@@ -1,9 +1,10 @@
 import React from 'react';
 
-const CheckOut = () => {
+const CheckOut = ({cart}) => {
+    console.log(cart);
     return (
-        <div>
-            <h1>This is checkout page</h1>
+        <div id='checkout'>
+            <h1>{cart.name}</h1>
         </div>
     );
 };

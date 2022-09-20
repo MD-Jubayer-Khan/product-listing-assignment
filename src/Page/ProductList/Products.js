@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
-import resetArrow from './undo-arrow.png';
+import resetArrow from '../../assets/undo-arrow.png';
+import CheckOut from '../CheckOutPage/CheckOut';
 
 
 const Products = () => {
     const [products, setProducts] = useState([])
     const [category, setCategory] = useState([])
+    const [cart, setCart] = useState([])
+    console.log(cart);
 
     const loadProducts = () => {
       const allProduct = category
@@ -51,7 +54,8 @@ const Products = () => {
     }
 
     return (
-        <div className="overflow-x-auto w-4/5 mt-12 mx-auto mb-22">
+        <>
+                <div className="overflow-x-auto w-4/5 mt-12 mx-auto mb-22">
         <div className='flex place-content-between'>
         <div className='flex'>
         <select onChange={(e) => handleFilter(e)} className=" bg-white border border-black rounded w-32 ml-12 mb-4 mt-2">
@@ -69,7 +73,7 @@ const Products = () => {
           <div className="form-control mr-12">
           <input  onChange={(e) => handleSearch(e)}  type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
           </div>
-          <button className='btn btn-info mr-12'>ADD To Cart</button>
+          <a href="#checkout" className='btn btn-info mr-12'>ADD To Cart</a>
           </div>
         </div>
             <div className="divider"></div> 
@@ -94,13 +98,19 @@ const Products = () => {
               {/* <!-- row 1 --> */}
               {
 
-                products.map(product => <Product key={product.id} product={product}></Product>)
+                products.map(product => <Product
+                   key={product.id} product={product}
+                   cart={cart}
+                   setCart={setCart}></Product>)
               }
 
             </tbody>  
           </table> 
           <div className="divider"></div> 
+          
         </div>
+        <CheckOut cart={cart}></CheckOut>
+        </>
     );
 };
 
