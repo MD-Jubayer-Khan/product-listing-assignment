@@ -13,13 +13,12 @@ const Product = ({product, cart, setCart}) => {
     };
 
     const handleChecked = (e) => {
-      const quantity = qty;
       const {p, checked} = e.target;
       if(checked){
-        const cartProduct = product === p ? {product, isChecked : checked,} : product;
-        let cartArr = []
-        cartArr.push(cartProduct)
-        setCart(cartArr)
+        const cartProduct = product ? {...product, p, isChecked : checked,} : product;
+        const arr = []
+        arr.push(...cart, cartProduct)
+        setCart(arr)
       }
 
     }
