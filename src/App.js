@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+
 import Header from './Page/Header/Header';
 import Products from './Page/ProductList/Products';
 import NotFound from './NotFound/NotFound'
+import Greeting from './Page/Greetings/Greeting';
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={ <Products/>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
+          <Route path='/checkout' element={<Greeting></Greeting>}></Route>
         </Routes>
     </div>
   );
